@@ -15,7 +15,12 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        home ohome = new home();
+
+        CommonServices commonServices = new CommonServices();
+      ohome.homeparam= commonServices.PostRequest("", "http://localhost:5000/WeatherForecast");
+        ohome.autoparam = commonServices.PostRequest("", "http://localhost:5000/AutoCAD");
+        return View(ohome);
     }
 
     public IActionResult Privacy()
