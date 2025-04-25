@@ -33,6 +33,8 @@ namespace WebApplication1.Controllers
 
             {
 
+                response = sHostURL;
+
                 HttpWebRequest webServiceRequest = (HttpWebRequest)HttpWebRequest.Create(sHostURL);
 
                 webServiceRequest.Method = "Get";
@@ -76,7 +78,7 @@ namespace WebApplication1.Controllers
 
                             {
 
-                                response = sResponse;
+                                response = response+ sResponse;
 
                             }
 
@@ -92,7 +94,7 @@ namespace WebApplication1.Controllers
 
             {
 
-                ex.Message.ToString();
+                response= response+" "+ ex.Message.ToString();
 
             }
 
