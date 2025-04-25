@@ -19,7 +19,7 @@ public class HomeController : Controller
 
         CommonServices commonServices = new CommonServices();
       ohome.homeparam= commonServices.PostRequest("", "http://webapi.example.internal/WeatherForecast");
-        ohome.autoparam = commonServices.PostRequest("", "http://webapi.example.internal/AutoCAD");
+        ohome.autoparam = commonServices.PostRequest("", "http://webapi.example.internal/autocad");
         return View(ohome);
     }
 
