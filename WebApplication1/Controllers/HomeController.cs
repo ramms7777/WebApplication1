@@ -18,8 +18,8 @@ public class HomeController : Controller
         home ohome = new home();
 
         CommonServices commonServices = new CommonServices();
-      ohome.homeparam= commonServices.PostRequest("", "http://localhost:5000/WeatherForecast");
-        ohome.autoparam = commonServices.PostRequest("", "http://localhost:5000/autocad");
+      ohome.homeparam= commonServices.PostRequest("", "http://host.docker.internal:5000/WeatherForecast");
+        ohome.autoparam = commonServices.PostRequest("", "http://host.docker.internal:5000/autocad");
         return View(ohome);
     }
 
