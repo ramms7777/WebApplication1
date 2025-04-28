@@ -13,15 +13,34 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+    //public IActionResult Index()
+    //{
+    //    home ohome = new home();
+
+    //    CommonServices commonServices = new CommonServices();
+    //  ohome.homeparam= commonServices.PostRequest("", "http://webapitest-service:5000/WeatherForecast");
+    //    ohome.autoparam = commonServices.PostRequest("", "http://webapitest-service:5000/autocad");
+    //    ohome.homeparam = commonServices.PostRequest("", "http://webapitest2-service:5000/WeatherForecast");
+    //    ohome.autoparam = commonServices.PostRequest("", "http://webapitest2-service:5000/autocad");
+    //    return View(ohome);
+    //}
     public IActionResult Index()
     {
         home ohome = new home();
-
         CommonServices commonServices = new CommonServices();
-      ohome.homeparam= commonServices.PostRequest("", "http://webapitest-service:5000/WeatherForecast");
-        ohome.autoparam = commonServices.PostRequest("", "http://webapitest-service:5000/autocad");
-        ohome.homeparam = commonServices.PostRequest("", "http://webapitest2-service:5000/WeatherForecast");
-        ohome.autoparam = commonServices.PostRequest("", "http://webapitest2-service:5000/autocad");
+
+        // Get data from webapitest-service (port 5000)
+        var homeparam1 = commonServices.PostRequest("", "http://webapitest-service:5000/WeatherForecast");
+        var autoparam1 = commonServices.PostRequest("", "http://webapitest-service:5000/autocad");
+
+        // Get data from webapitest2-service (port 4000)
+        var homeparam2 = commonServices.PostRequest("", "http://webapitest2-service:4000/WeatherForecast");
+        var autoparam2 = commonServices.PostRequest("", "http://webapitest2-service:4000/autocad");
+
+        // Assign them properly (you can structure them how you need)
+        ohome.homeparam = homeparam1 + "\n" + homeparam2;
+        ohome.autoparam = autoparam1 + "\n" + autoparam2;
+
         return View(ohome);
     }
 
