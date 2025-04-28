@@ -34,8 +34,8 @@ public class HomeController : Controller
         var autoparam1 = commonServices.PostRequest("", "http://webapitest-service:5000/autocad");
 
         // Get data from webapitest2-service (port 4000)
-        var homeparam2 = commonServices.PostRequest("", "http://webapitest2-service:4000/WeatherForecast");
-        var autoparam2 = commonServices.PostRequest("", "http://webapitest2-service:4000/autocad");
+        var homeparam2 = commonServices.PostRequest("", "http://webapitest2-service:4000/qumuli");
+        var autoparam2 = commonServices.PostRequest("", "http://webapitest2-service:4000/brads");
 
         // Assign them properly (you can structure them how you need)
         ohome.homeparam = homeparam1 + "\n" + homeparam2;
