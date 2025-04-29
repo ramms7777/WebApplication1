@@ -30,12 +30,12 @@ public class HomeController : Controller
         CommonServices commonServices = new CommonServices();
 
         // Get data from webapitest-service (port 5000)
-        var homeparam1 = commonServices.PostRequest("", "http://localhost:5000/WeatherForecast");
-        var autoparam1 = commonServices.PostRequest("", "http://localhost:5000/autocad");
+        var homeparam1 = commonServices.PostRequest("", "http://host.docker.internal/WeatherForecast");
+        var autoparam1 = commonServices.PostRequest("", "http://host.docker.internal/autocad");
 
         // Get data from webapitest2-service (port 4000)
-        var homeparam2 = commonServices.PostRequest("", "http://localhost:5000/qumuli");
-        var autoparam2 = commonServices.PostRequest("", "http://localhost:5000/brads");
+        var homeparam2 = commonServices.PostRequest("", "http://host.docker.internal/qumuli");
+        var autoparam2 = commonServices.PostRequest("", "http://host.docker.internal/brads");
 
         // Assign them properly (you can structure them how you need)
         ohome.homeparam = homeparam1 + "\n" + homeparam2;
