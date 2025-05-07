@@ -36,10 +36,11 @@ public class HomeController : Controller
         // Get data from webapitest2-service (port 4000)
         var homeparam2 = commonServices.PostRequest("", "http://webapitest2-service:5001/qumuli");
         var autoparam2 = commonServices.PostRequest("", "http://webapitest2-service:5001/brads");
+        var autoparam3 = commonServices.PostRequest("", "http://webapitest2-service:5001/api/employees");
 
         // Assign them properly (you can structure them how you need)
         ohome.homeparam = homeparam1 + "\n" + homeparam2;
-        ohome.autoparam = autoparam1 + "\n" + autoparam2;
+        ohome.autoparam = autoparam1 + "\n" + autoparam2+"\n"+ autoparam3;
 
         return View(ohome);
     }
