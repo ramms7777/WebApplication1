@@ -37,7 +37,7 @@ public class HomeController : Controller
         var homeparam2 = commonServices.PostRequest("", "http://webapitest2-service:5001/qumuli");
         var autoparam2 = commonServices.PostRequest("", "http://webapitest2-service:5001/brads");
         var autoparam3 = commonServices.PostRequest("", "http://webapitest2-service:5001/api/employees");
-        var homeparam3 = commonServices.PostRequest("", "http://webapitest-service:5002/autocadtwo");
+        var homeparam3 = commonServices.PostRequest("", "http://webapitest3-service:5002/autocadtwo");
         // Assign them properly (you can structure them how you need)
         ohome.homeparam = homeparam1 + "\n" + homeparam2 + "\n" + homeparam3;
         ohome.autoparam = autoparam1 + "\n" + autoparam2+"\n"+ autoparam3;
